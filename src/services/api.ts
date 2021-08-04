@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 
 // https://cloud.iexapis.com/stable/stock/aapl/company
 export const api = axios.create({
@@ -7,15 +6,20 @@ export const api = axios.create({
   baseURL: 'https://cloud.iexapis.com/stable/stock/',
 });
 
-interface ExemploApiProps {
+interface ApiProps {
   symbol: string;
   type: 'chart' | 'company' | 'quote';
   conteudo?: string;
   opcoes?: string
 }
 
-export function Api({ symbol, type, conteudo, opcoes }: ExemploApiProps) {
-  const url = `${symbol}/${type}${conteudo || ''}?token=${'pk_183b3fe4ee7a4ab3acecb8f12791b338'}${opcoes || ''}`;
+export function Api({ symbol, type, conteudo, opcoes }: ApiProps) {
+  const url = `${symbol}/${type}${conteudo || ''}?token=${process.env.REACT_APP_API_KEY}${opcoes || ''}`;
+  return api.get(url);
+};
+
+export function Api2({ symbol, type, conteudo, opcoes }: ApiProps) {
+  const url = `${symbol}/${type}${conteudo}?token=${process.env.REACT_APP_API_KEY}${opcoes || ''}`;
   return api.get(url);
 };
 
@@ -33,8 +37,8 @@ export interface DataQuote {
   symbol: string; // codigo_empresa
   companyName: string; // nome_empresa
   latestPrice: number; // valor_acao
-  high: number;
-  low: number;
+  // high: number;
+  // low: number;
   // high - low = valor_variacao_dinheiro
   changePercent: number; // porcentagem
 }
@@ -48,13 +52,18 @@ export interface DataHistoricalPrice {
   // grafico
   // symbol: string; // codigo_empresa
   close: number; // uv => no grafico
-  date: Date; // name => no grafico
+  date: string; // name => no grafico
+  high: number,
+  low: number
+  // high - low = valor_variacao_dinheiro
 }
 
 export const DataHistoricalPriceInitialData: DataHistoricalPrice = {
   // symbol: '',
   close: 0,
-  date: new Date(`${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`)
+  date: '',
+  high: 0,
+  low: 0,
 };
 
 export const DataHistoricalPricesInitialData = [];
@@ -63,10 +72,41 @@ export const DataQuoteInitialData: DataQuote = {
   symbol: '',
   companyName: '',
   latestPrice: 0,
-  high: 0,
-  low: 0,
+  // high: 0,
+  // low: 0,
   changePercent: 0
 };
+
+export interface DataValorVariacaoDinheiro {
+  high: number;
+  low: number;
+}
+
+export interface DataProps4 {
+  nome_empresa: string;
+  codigo_empresa: string;
+  porcentagem: number;
+  valor_acao: number;
+  valor_variacao_dinheiro: DataValorVariacaoDinheiro;
+  data: DataHistoricalPrice[];
+}
+
+export interface DataProps3 {
+  nome_empresa: string;
+  codigo_empresa: string;
+  porcentagem: number;
+  valor_acao: number;
+  valor_variacao_dinheiro: number;
+  data: DataHistoricalPrice[];
+}
+
+export interface DataProps2 {
+  nome_empresa: string;
+  codigo_empresa: string;
+  porcentagem: number;
+  valor_acao: number;
+  data: DataHistoricalPrice[];
+}
 
 export interface DataProps {
   nome_empresa: string;
@@ -74,7 +114,10 @@ export interface DataProps {
   porcentagem: number;
   valor_acao: number;
   valor_variacao_dinheiro: number;
-  data: DataHistoricalPrice[];
+  data: {
+    uv: number,
+    name: string
+  }[];
 }
 
 export const DataPropsInitialData = {
