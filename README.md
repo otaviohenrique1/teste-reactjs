@@ -1,46 +1,215 @@
-# Getting Started with Create React App
+-------------App com Reactjs-------------
+# Criar projeto
+  npx create-react-app app-bolsa-valores-reactjs
+  npx create-react-app app-bolsa-valores-reactjs --template redux-typescript
+  ou
+  yarn create react-app app-bolsa-valores-reactjs
+  yarn create react-app app-bolsa-valores-reactjs --template redux-typescript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Iniciar o projeto
+  npm start
+  ou
+  yarn start
 
-## Available Scripts
+# Instalar react-redux
+  npm install --save react-redux
+  npm install -D @types/react-redux
+  ou
+  yarn add react-redux
+  yarn add -D @types/react-redux
 
-In the project directory, you can run:
+# Instalar styled-components
+  npm install --save styled-components
+  npm install -D @types/styled-components
+  ou
+  yarn add styled-components
+  yarn add -D @types/styled-components
 
-### `yarn start`
+# Instalar react-router-dom
+  npm install react-router-dom
+  npm install -D @types/react-router-dom
+  ou
+  yarn add react-router-dom
+  yarn add -D @types/react-router-dom
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Instalar react-icons
+  npm install --save react-icons
+  ou
+  yarn add react-icons
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Instalar recharts
+  npm install --save recharts
+  ou
+  yarn add recharts
 
-### `yarn test`
+# Instalar idb
+  npm install --save idb
+  ou
+  yarn add idb
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Instalar react-paginate
+  npm install --save react-paginate
+  npm install -D @types/react-paginate
+  ou
+  yarn add react-paginate
+  yarn add -D @types/react-paginate
 
-### `yarn build`
+# Instalar react-elastic-carousel
+  npm install --save react-elastic-carousel
+  ou
+  yarn add react-elastic-carousel
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Instalar axios
+  npm install axios
+  ou
+  yarn add axios
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-----------------------------------------------
+-------------App com React Native-------------
+# Criar projeto
+  expo init app-bolsa-valores-react-native
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Iniciar o projeto
+  npm run dev
+  ou
+  yarn dev
 
-### `yarn eject`
+# Instalar pacotes do projeto
+  npm install
+  ou
+  yarn install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Instalar react-navigation
+  npm install @react-navigation/native
+  ou
+  yarn add @react-navigation/native
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Instalar dependencias do react-navigation
+  expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context
+  ou
+  npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context
+  ou
+  yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Instalar recharts
+  npm install --save recharts
+  ou
+  yarn add recharts
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Instalar axios
+  npm install axios
+  ou
+  yarn add axios
+-----------------------------------------------
+-------------App com Nextjs-------------
+# Criar projeto
+  npx create-next-app --example with-styled-components app-bolsa-valores-nextjs
+  ou
+  yarn create next-app --example with-styled-components app-bolsa-valores-nextjs
 
-## Learn More
+# Iniciar o projeto
+  npm run dev
+  ou
+  yarn dev
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Instalar pacotes do projeto
+  npm install
+  ou
+  yarn install
+-----------------------------------------------
+-------------Exemplo App Reactjs com Redux-------------
+# Criar projeto
+  npx create-react-app reactjs-redux-app --template typescript
+  ou
+  yarn create react-app reactjs-redux-app --template typescript
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Iniciar o projeto
+  npm start
+  ou
+  yarn start
+
+# Instalar redux react-redux redux-thunk
+  npm install redux react-redux redux-thunk
+  npm install -D @types/redux @types/react-redux @types/redux-thunk
+  ou
+  yarn add redux react-redux redux-thunk
+  yarn add -D @types/redux @types/react-redux @types/redux-thunk
+-----------------------------------------------
+-------------teste-reactjs-------------
+# Criar projeto
+  npx create-react-app teste-reactjs --template typescript
+  yarn create react-app teste-reactjs --template typescript
+
+# Iniciar o projeto
+  npm start
+  ou
+  yarn start
+
+# Instalar axios
+  npm install axios
+  ou
+  yarn add axios
+-----------------------------------------------
+-------------App com Reactjs-------------
+# Criar projeto
+  npx create-react-app app-reactjs-bolsa-valores
+  npx create-react-app app-reactjs-bolsa-valores --template redux-typescript
+  ou
+  yarn create react-app app-reactjs-bolsa-valores
+  yarn create react-app app-reactjs-bolsa-valores --template redux-typescript
+
+# Instalar pacotes do projeto
+  npm install
+  ou
+  yarn install
+
+# Iniciar o projeto
+  npm start
+  ou
+  yarn start
+
+# Instalar styled-components
+  npm install --save styled-components
+  npm install -D @types/styled-components
+  ou
+  yarn add styled-components
+  yarn add -D @types/styled-components
+
+# Instalar react-router-dom
+  npm install react-router-dom
+  npm install -D @types/react-router-dom
+  ou
+  yarn add react-router-dom
+  yarn add -D @types/react-router-dom
+
+# Instalar react-icons
+  npm install --save react-icons
+  ou
+  yarn add react-icons
+
+# Instalar recharts
+  npm install --save recharts
+  ou
+  yarn add recharts
+
+# Instalar react-elastic-carousel
+  npm install --save react-elastic-carousel
+  ou
+  yarn add react-elastic-carousel
+
+# Instalar axios
+  npm install axios
+  ou
+  yarn add axios
+
+# Instalar 
+  npm install formik
+  ou
+  yarn add formik
+# Instalar yup
+  npm install yup
+  npm install -D @types/yup
+  ou
+  yarn add yup
+  yarn add -D @types/yup
+-----------------------------------------------
