@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { Api, Api2, DataCompany, DataCompanyInitialData, DataHistoricalPrice, DataHistoricalPricesInitialData, DataProps, DataProps2, DataPropsInitialData, DataQuote, DataQuoteInitialData } from './services/api';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
-export function App() {
+function App() {
   const [buscaEmpresa, setBuscaEmpresa] = useState<string>('');
   const [data, setData] = useState<DataProps>(DataPropsInitialData);
 
@@ -113,7 +113,27 @@ export function App() {
         {(!data) ? (
           <h1>Sem dados</h1>
         ) : (
-          <AreaDados data={data} />
+          <div>
+            <ul>
+              <li style={{ listStyle: 'none' }}>{`Codigo da empresa => ${(data.codigo_empresa) ? data.codigo_empresa : '-'}`}</li>
+              <li style={{ listStyle: 'none' }}>{`Nome da empresa => ${(data.nome_empresa) ? data.nome_empresa : '-'}`}</li>
+              <li style={{ listStyle: 'none' }}>{`Porcentagem => ${data.porcentagem}`}</li>
+              <li style={{ listStyle: 'none' }}>{`Valor da ação => ${data.valor_acao}`}</li>
+              <li style={{ listStyle: 'none' }}>{`Valor variação dinheiro => ${data.valor_variacao_dinheiro}`}</li>
+            </ul>
+            <LineChart width={700} height={300} data={data.data} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
+              <Line type="monotone" dataKey="uv" stroke="#0047BB" />
+              <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip
+                itemStyle={styleTooltip}
+                labelStyle={styleTooltip}
+                contentStyle={styleTooltip}
+                wrapperStyle={styleTooltip}
+              />
+            </LineChart>
+          </div>
         )}
       </div>
     </div>
@@ -125,48 +145,7 @@ const styleTooltip: React.CSSProperties = {
   background: '#0047BB',
 };
 
-interface AreaDadosProps {
-  data: DataProps;
-}
-
-function AreaDados(props: AreaDadosProps) {
-  return (
-    <div>
-      <ul>
-        <li style={{ listStyle: 'none' }}>{`Codigo da empresa => ${(props.data.codigo_empresa) ? props.data.codigo_empresa : '-'}`}</li>
-        <li style={{ listStyle: 'none' }}>{`Nome da empresa => ${(props.data.nome_empresa) ? props.data.nome_empresa : '-'}`}</li>
-        <li style={{ listStyle: 'none' }}>{`Porcentagem => ${props.data.porcentagem}`}</li>
-        <li style={{ listStyle: 'none' }}>{`Valor da ação => ${props.data.valor_acao}`}</li>
-        <li style={{ listStyle: 'none' }}>{`Valor variação dinheiro => ${props.data.valor_variacao_dinheiro}`}</li>
-      </ul>
-      <Grafico dataGrafico={props.data.data} />
-    </div>
-  );
-}
-
-interface GraficoProps {
-  dataGrafico: {
-    uv: number;
-    name: string;
-  }[];
-}
-
-export function Grafico(props: GraficoProps) {
-  return(
-    <LineChart width={700} height={300} data={props.dataGrafico} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
-      <Line type="monotone" dataKey="uv" stroke="#0047BB" />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip
-        itemStyle={styleTooltip}
-        labelStyle={styleTooltip}
-        contentStyle={styleTooltip}
-        wrapperStyle={styleTooltip}
-      />
-    </LineChart>
-  );
-}
+export default App;
 
 /*
 let x = [
